@@ -233,14 +233,13 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
-  // const resultArr = [];
-  // arr.reduce(function transform(accum, elem, index) {
-  //   resultArr[index] = accum + elem;
-  //   return resultArr[index];
-  // }, 0);
-  // return resultArr;
+function getMovingSum(arr) {
+  const resultArr = [];
+  arr.reduce((accum, elem, index) => {
+    resultArr[index] = accum + elem;
+    return resultArr[index];
+  }, 0);
+  return resultArr;
 }
 
 /**
@@ -273,12 +272,8 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
-  // return arr.map((elem, index) => String(`${elem} `)
-  // .repeat(index + 1)).map((elem) => elem.split(' '))
-  // .flat(Infinity).filter((elem) => elem !== '')
-  //   .map((element) => (element === 'null' ? element = null : element));
+function propagateItemsByPositionIndex(arr) {
+  return arr.map((elem, index) => Array(index + 1).fill(elem)).flat();
 }
 
 
